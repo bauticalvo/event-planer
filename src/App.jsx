@@ -1,10 +1,7 @@
 import { Route, Routes } from 'react-router'
 import './App.css'
-import { FloaterMenu } from './Components/Header/FloaterMenu'
 import { Header } from './Components/Header/Header'
 import { Home } from './Pages/Home'
-import Contact from './Pages/Contact'
-import About from './Pages/About'
 import { usePageTransition } from './Components/Hooks/usePageTransition'
 import { PageTransition } from './Components/Transition/PageTransition'
 import { Footer } from './Components/Footer/Footer'
@@ -18,6 +15,15 @@ function App() {
   const [showParticles, setShowParticles] = useState(false);
   
   useScrollToTop();
+  const scrollToSection = (sectionId) => {
+    var section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ block: "start", behavior: "smooth" });
+    } else {
+      console.log("No se encontró la sección");
+    }
+  };
+
 
   return (
     <main className='bg-background text-text font-satoshi overflow-x-scroll no-scrollbar'>
@@ -26,9 +32,14 @@ function App() {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         isActive={showParticles}
+        scrollToSection={scrollToSection}
         />
         {
-          isMenuOpen && <Menu startTransition={startTransition} setIsMenuOpen={setIsMenuOpen} />
+          isMenuOpen && <Menu 
+          startTransition={startTransition} 
+          setIsMenuOpen={setIsMenuOpen}
+          scrollToSection={scrollToSection}
+          />
         }
       <Routes>
         <Route index element={<Home startTransition={startTransition} showParticles={showParticles} setShowParticles={setShowParticles} />} />

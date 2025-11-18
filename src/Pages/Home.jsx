@@ -14,6 +14,9 @@ export const Home = ({startTransition, setShowParticles, showParticles}) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
     <div>
+      <div id="start">
+
+      </div>
         <HeroSection2 
           isVideoLoaded={isVideoLoaded} 
           setIsVideoLoaded={setIsVideoLoaded} 
@@ -25,11 +28,21 @@ export const Home = ({startTransition, setShowParticles, showParticles}) => {
           <div className="bg-gradient-to-b from-transparent to-background h-[50vh] absolute -top-[50vh] left-0 w-full"></div>
           <InfoSection />
         </div>
-        <Services />
-        <StockPolaroids />
-        <Testimonial />
-        <About />
-        <Contact />
+        <section id="services">
+          <Services />
+        </section>
+        <section id="stories">
+          <StockPolaroids />
+        </section>
+        <section id="testimonials">
+          <Testimonial />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="contact">
+          <Contact />          
+        </section>
         {
           !isVideoLoaded && <Loader />
         }

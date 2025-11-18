@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { IoMenu } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
-export const Header = ({ startTransition, isMenuOpen, setIsMenuOpen, isActive }) => {
+export const Header = ({ startTransition, isMenuOpen, setIsMenuOpen, isActive, scrollToSection }) => {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -12,9 +12,8 @@ export const Header = ({ startTransition, isMenuOpen, setIsMenuOpen, isActive })
         return (
            <button
             className='text-md font-semibold cursor-pointer hover:scale-110 transition-all duration-300 uppercase'
-            onClick={() => {
-                if (location.pathname === link) return;
-                startTransition ? startTransition(navigate, link) : navigate(link);
+            onClick={() => {            
+                scrollToSection(link);
             }}
            >   
            {text}
@@ -52,9 +51,9 @@ const headerVariants = {
                 <div 
                     className='w-auto h-full hidden lg:flex items-center justify-center pl-20 space-x-6'
                 >
-                    <NavigationButton text="Servicios" link="/" />
-                    <NavigationButton text="Eventos" link="/about" />
-                    <NavigationButton text="Clientes" link="/contact" />
+                    <NavigationButton text="Servicios" link="services" />
+                    <NavigationButton text="Eventos" link="stories" />
+                    <NavigationButton text="Clientes" link="testimonials" />
                 </div>
                 <div 
                 className='w-auto flex items-center px-4'
@@ -74,9 +73,9 @@ const headerVariants = {
                 <div 
                     className='w-auto h-full hidden lg:flex items-center justify-end pr-20 space-x-6'
                 >
-                    <NavigationButton text="Inicio" link="/" />
-                    <NavigationButton text="nosotros" link="/about" />
-                    <NavigationButton text="contacto" link="/contact" />
+                    <NavigationButton text="Inicio" link="start" />
+                    <NavigationButton text="Sobre Mi" link="about" />
+                    <NavigationButton text="contacto" link="contact" />
                 </div>
                 <button 
                     className='flex lg:hidden px-4'

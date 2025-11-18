@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router';
 
-export const Menu = ({ startTransition, setIsMenuOpen}) => {
+export const Menu = ({ startTransition, setIsMenuOpen, scrollToSection}) => {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -13,8 +13,7 @@ export const Menu = ({ startTransition, setIsMenuOpen}) => {
                     ${isActive ? 'text-primary scale-110' : 'text-light hover:text-white hover:scale-105'}
                     relative group py-2 px-4`}
                 onClick={() => {
-                    if (isActive) return;
-                    startTransition ? startTransition(navigate, link) : navigate(link);
+                    scrollToSection(link);
                     setIsMenuOpen(false);
                 }}
             >   
@@ -35,17 +34,17 @@ export const Menu = ({ startTransition, setIsMenuOpen}) => {
             </div>
             
             <section className='flex flex-col items-center space-y-4 mb-8'>
-                <NavigationButton text="Servicios" link="/" />
-                <NavigationButton text="Eventos" link="/about" />
-                <NavigationButton text="Clientes" link="/contact" />
+                <NavigationButton text="Servicios" link="services" />
+                <NavigationButton text="Eventos" link="stories" />
+                <NavigationButton text="Clientes" link="testimonials" />
             </section>
 
             <div className='h-px w-3/4 max-w-xs rounded-full bg-text/20'></div>
             
             <section className='flex flex-col items-center space-y-4 mb-8'>
-                <NavigationButton text="Inicio" link="/" />
-                <NavigationButton text="Sobre Mi" link="/about" />
-                <NavigationButton text="Contacto" link="/contact" />
+                <NavigationButton text="Inicio" link="start" />
+                <NavigationButton text="Sobre Mi" link="about" />
+                <NavigationButton text="contacto" link="contact" />
             </section>
 
         </div>
