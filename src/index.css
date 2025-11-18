@@ -1,0 +1,400 @@
+@import "tailwindcss";
+
+@theme {
+
+  --color-background: #e7dcd1;
+  --color-secondary: #F4F0E9;
+  --color-text: #3D2B1F;
+  --color-text-alt: #6F4B3B;
+  --color-jade: #8BAEAC;
+  --color-terracota: #A16B56;
+  --color-pale: #D8BFB4;
+  --color-sec-surface: #776158;
+  --color-sand: #964B00;
+
+  --color-ascensor: #F15A24;
+  --color-bauti: #F0EFD6;
+  --shadow-custom: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+
+  --font-bodoni: "Bodoni Moda" ;
+  --font-satoshi: "Satoshi";
+}
+
+
+h6{
+  @apply text-xl font-bodoni font-bold ;
+}
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none;    /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;            /* Chrome, Safari, Opera */
+  }
+}
+
+/*  SANJUAN SECTION  */
+
+@utility radial-gradient {
+  background: radial-gradient(
+          #2B292B 0%,
+          transparent 0%
+  );
+}
+
+@utility masked-img {
+  mask-image: url("/images/sanjuan/mapa_sanjuan.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+
+#art {
+  @apply flex-center flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
+
+  h2 {
+      @apply relative md:text-[20vw] text-7xl text-nowrap leading-none text-center text-[#DED9D2]  mb-8;
+  }
+
+  .content {
+      @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-36 gap-10;
+  
+      h3{
+          @apply md:text-xl text-lg text-center font-serif md:w-full w-80 text-white;
+      }
+    }
+
+  .cocktail-img {
+      @apply md:w-[60vw] w-[90vw] h-[30vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-20 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+  }
+
+  .masked-container {
+      h2 {
+          @apply text-4xl md:text-5xl text-center mb-10 text-white mt-32;
+      }
+
+      div {
+          @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-0 bottom-[0%] left-1/2 -translate-x-1/2;
+
+          h3 {
+              @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white font-bold ;
+          }
+
+          p {
+              @apply text-sm text-nowrap;
+          }
+      }
+  }
+}
+
+
+
+
+/*  HEROSECTION  */
+
+
+/* En tu archivo CSS global */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #FFFFFF; /* Borde blanco */
+  text-shadow: 
+  0 0 10px rgba(0,0,0,0.5),
+  0 0 20px rgba(0,0,0,0.5);
+}
+
+button {
+  cursor: pointer;
+}
+body {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+h2{
+  text-shadow:  #000 0.6px 0.6px 2px;
+
+}
+li {
+  list-style: none;
+  text-shadow:  #000 0.6px 0.6px 2px;
+
+}
+
+.glitch-text {
+  position: relative;
+  color: #fff;
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+  animation: glitchFloat 3s infinite ease-in-out;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.glitch-text::before {
+  color: #ff00ff;
+  animation: glitch1 2s infinite;
+}
+
+.glitch-text::after {
+  color: #00ffff;
+  animation: glitch2 2s infinite;
+}
+
+@keyframes glitch1 {
+  0%, 100% { transform: translate(0); opacity: 0; }
+  20% { transform: translate(-2px, 2px); opacity: 0.8; }
+  40% { transform: translate(-2px, -2px); opacity: 0; }
+  60% { transform: translate(2px, 2px); opacity: 0.8; }
+  80% { transform: translate(2px, -2px); opacity: 0; }
+}
+
+@keyframes glitch2 {
+  0%, 100% { transform: translate(0); opacity: 0; }
+  20% { transform: translate(2px, -2px); opacity: 0.8; }
+  40% { transform: translate(2px, 2px); opacity: 0; }
+  60% { transform: translate(-2px, -2px); opacity: 0.8; }
+  80% { transform: translate(-2px, 2px); opacity: 0; }
+}
+
+@keyframes glitchFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+#videoHero {
+  @apply w-full h-full absolute top-0 left-0 object-bottom object-cover;
+}
+
+.noisy {
+  @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
+}
+
+
+#hero {
+  @apply relative z-10 min-h-dvh w-full border border-transparent;
+
+ 
+
+
+  .body {
+      @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
+
+      .content {
+          @apply flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto;
+
+          p:nth-of-type(2) {
+              @apply text-6xl text-secondary max-w-xl;
+          }
+
+          p:last-of-type {
+              @apply 2xl:text-start text-center;
+          }
+
+          .view-cocktails {
+              @apply space-y-5 text-lg lg:max-w-lg md:max-w-xs w-full;
+
+              p {
+                  @apply text-left;
+              }
+
+              a {
+                  @apply font-semibold opacity-80 2xl:text-start text-center hover:text-secondary;
+              }
+          }
+      }
+  }
+}
+
+
+
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Light.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-LightItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-VariableItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Black') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-BlackItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi/Satoshi-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+/*BODONI*/
+
+
+
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Light.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-LightItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Variable.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-VariableItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Black') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-BlackItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('./assets/fonts/Bodoni-Moda/Bodoni-Moda-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
