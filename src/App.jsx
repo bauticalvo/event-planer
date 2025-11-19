@@ -8,12 +8,13 @@ import { Footer } from './Components/Footer/Footer'
 import { useState } from 'react'
 import { Menu } from './Components/Header/Menu'
 import useScrollToTop from './Components/Hooks/useScrollTop'
+import { useLenisSmoothScroll } from './Components/Hooks/useSmoothScroll'
 
 function App() {
   const { isTransitioning, startTransition } = usePageTransition();
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [showParticles, setShowParticles] = useState(false);
-  
+    useLenisSmoothScroll();
   useScrollToTop();
   const scrollToSection = (sectionId) => {
     var section = document.getElementById(sectionId);
@@ -26,7 +27,7 @@ function App() {
 
 
   return (
-    <main className='bg-background text-text font-satoshi overflow-x-scroll no-scrollbar'>
+    <main  className='bg-background text-text font-satoshi overflow-x-scroll no-scrollbar'>
       <Header 
         startTransition={startTransition}
         isMenuOpen={isMenuOpen}

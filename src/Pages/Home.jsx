@@ -13,7 +13,7 @@ import { InfoSection } from "../Components/Home/Hero/InfoSection"
 export const Home = ({startTransition, setShowParticles, showParticles}) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
-    <div>
+    <div >
       <div id="start">
 
       </div>
@@ -24,16 +24,18 @@ export const Home = ({startTransition, setShowParticles, showParticles}) => {
           setShowParticles={setShowParticles}
           showParticles={showParticles}
         />
-        <div className="relative">
+        <div className="relative top-[vh] h-[100vh]">
           <div className="bg-gradient-to-b from-transparent to-background h-[50vh] absolute -top-[50vh] left-0 w-full"></div>
           <InfoSection />
         </div>
         <section id="services">
           <Services />
         </section>
+        <div className="h-[50vh]"></div>
         <section id="stories">
           <StockPolaroids />
         </section>
+        <div className="h-[50vh]"></div>
         <section id="testimonials">
           <Testimonial />
         </section>
@@ -43,6 +45,8 @@ export const Home = ({startTransition, setShowParticles, showParticles}) => {
         <section id="contact">
           <Contact />          
         </section>
+        <div className="h-[30vh]"></div>
+
         {
           !isVideoLoaded && <Loader />
         }

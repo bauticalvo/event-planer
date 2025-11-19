@@ -94,7 +94,7 @@ useEffect(() => {
                 <p className="font-bold uppercase text-sec-surface text-sm lg:text-base">
                     Historias Destacadas
                 </p>
-                <h2 className="w-1/2 text-center text-2xl lg:text-2xl 2xl:text-4xl font-bold text-text font-bodoni italic ">
+                <h2 className="w-1/2 text-center text-2xl lg:text-2xl 2xl:text-4xl font-bold text-text font-cormorant italic ">
                     Un vistazo a las celebraciones más bellas que he diseñado y orquestado con pasión.
                 </h2>
                 
@@ -114,9 +114,9 @@ useEffect(() => {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-auto lg:w-[15vw] "
             style={{ zIndex: i + 10 }} // Aumentar Z-index para que se apilen correctamente
           >
-            <div className='flex items-end justify-center h-full w-full z-10 absolute top-0'>
+            {/* <div className='flex items-end justify-center h-full w-full z-10 absolute top-0'>
               <p className='text-3xl'>{i}</p>
-            </div>
+            </div> */}
             {
               element.type === "image" ?
               <img

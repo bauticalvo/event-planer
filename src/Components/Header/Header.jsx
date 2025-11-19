@@ -46,7 +46,7 @@ const headerVariants = {
             initial="hidden" // Estado inicial al montar el componente
             animate={isActive ? "visible" : "hidden"} // El estado se basa en la prop 'isActive'
             variants={headerVariants}
-        className="h-auto flex flex-col bg-background w-full z-20 fixed  items-center justify-center">
+        className="h-auto flex flex-col bg-background w-full z-500 fixed  items-center justify-center">
             <section className='flex w-full h-[10vh] items-center justify-between'>
                 <div 
                     className='w-auto h-full hidden lg:flex items-center justify-center pl-20 space-x-6'
@@ -59,7 +59,7 @@ const headerVariants = {
                 className='w-auto flex items-center px-4'
                 >
                     <img 
-                        src="/logos/logo_vr.svg"
+                        src="/logos/logo_vr2.svg"
                         alt="logo"
                         className="h-[4vh] lg:h-[6vh]"
                         onClick={() => {

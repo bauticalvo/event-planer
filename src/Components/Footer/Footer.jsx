@@ -54,7 +54,7 @@ export const Footer = ({startTransition}) => {
         return (
             <div className='hidden lg:flex flex-col h-full w-full py-24 mx-24 items-center border-x-1 border-text/50 justify-center space-y-4'>
                     <img 
-                        src="/logos/logo_vr.svg"
+                        src="/logos/logo_vr2.svg"
                         alt="logo"
                         className="h-[4vh] lg:h-[6vh]"
                         onClick={() => {
@@ -70,7 +70,7 @@ export const Footer = ({startTransition}) => {
         return (
             <div className='lg:hidden flex flex-col h-full w-full py-14 mx-24 items-center justify-center space-y-4'>
                     <img 
-                        src="/logos/logo_vr.svg"
+                        src="/logos/logo_vr2.svg"
                         alt="logo"
                         className="h-[4vh] lg:h-[6vh]"
                         onClick={() => {

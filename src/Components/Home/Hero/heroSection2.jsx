@@ -86,7 +86,7 @@ export const HeroSection2 = ({ isVideoLoaded, setIsVideoLoaded, setShowParticles
     <>
       <section id="hero" className="relative z-10"> {/* Añadido relative z-10 para asegurar que el contenido esté por encima del video */}
         <div className="flex flex-col w-full h-[100vh] justify-center items-center text-center ">
-          <h1 className="title mt-[10vh] font-bodoni italic text-5xl md:text-8xl text-background">Valeria Rodriguez</h1>
+          <h1 className="title mt-[10vh] font-cormorant italic text-5xl md:text-8xl text-background">Valeria Rodriguez</h1>
           <h2 className="subtitle italic text-xl md:text-3xl text-background mt-4">
              Tu event planner de bodas y celebraciones con estilo 
           </h2>

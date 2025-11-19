@@ -2,15 +2,15 @@
 
 @theme {
 
-  --color-background: #e7dcd1;
-  --color-secondary: #F4F0E9;
-  --color-text: #3D2B1F;
-  --color-text-alt: #6F4B3B;
-  --color-jade: #8BAEAC;
-  --color-terracota: #A16B56;
-  --color-pale: #D8BFB4;
-  --color-sec-surface: #776158;
-  --color-sand: #964B00;
+  --color-background: #231F1D; 
+  --color-secondary: #2E2926; 
+  --color-text: #F3EFEA; 
+  --color-text-alt: #ABA39C; 
+  --color-jade: #D4B996; 
+  --color-terracota: #594D46; 
+  --color-pale: #38322E; 
+  --color-sec-surface: #D4B996; 
+  --color-sand: #1A1512;
 
   --color-ascensor: #F15A24;
   --color-bauti: #F0EFD6;
@@ -19,9 +19,36 @@
 
   --font-bodoni: "Bodoni Moda" ;
   --font-satoshi: "Satoshi";
+  --font-cormorant: "Cormorant Garamond";
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
+/* Para navegadores WebKit (Chrome, Safari) */
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #231F1D;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #D4B996;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #F0EFD6;
+}
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 h6{
   @apply text-xl font-bodoni font-bold ;
 }
@@ -398,3 +425,77 @@ li {
   font-display: swap;
   font-style: italic;
 }
+
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-BoldItalic.ttf') format('ttf');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-Italic.ttf') format('ttf');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-LightItalic.ttf') format('ttf');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-MediumItalic.ttf') format('ttf');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-SemiBold.ttf') format('ttf');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/Cormorant/CormorantGaramond-SemiBoldItalic.ttf') format('ttf');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+

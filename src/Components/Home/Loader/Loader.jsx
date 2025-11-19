@@ -14,7 +14,7 @@ export const Loader = () => {
         }}
       >
         <img 
-          src="/logos/logo_vr.svg"
+          src="/logos/logo_vr2.svg"
           alt="Loading..."
           className="w-32 md:w-48 h-auto object-contain"
         />
